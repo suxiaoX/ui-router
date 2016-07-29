@@ -1,25 +1,39 @@
 var routerApp = angular.module("routerApp",["ui.router"]);
 
+
+routerApp.controller("loadData",["$scope","$http",function($scope,$http){
+	
+	$http({
+		method:"GET",
+		url:"data.json"
+	}).success(function(data,status,headers,config){
+		console.log(data);
+		$scope.datas =data;
+	}).error(function(data,status,headers,config){
+		console.log("error...")
+	})
+}])
+
 routerApp.config(function($stateProvider,$urlRouterProvider){
 	
 	$urlRouterProvider.otherwise("/index");
 	
 	$stateProvider
-	.state("index",{
+	.state("index",{//对应ui-sref的名称 ui-sref = "index"
 		url:"/index",
 		views:{
 			"":{
-				templateUrl:"views/index.html"
+				templateUrl:"views/index.html"//模板下面的两个视图，ui-view="topbar" ui-view="main"。
 			},
 			"topbar@index":{
 				templateUrl:"views/topbar.html"
 			},
-			"main@index":{
+			"main@index":{//表示index下面的main，模板里面的ui-view=“mian”就对应这个了。
 				templateUrl:"views/home.html"
 			}
 		}		
 	})
-	.state("index.usermng",{
+	.state("index.usermng",{//对应ui-sref的名称 ui-sref = "index.uermng"
 		url:"/usermng",
 		views:{
 			"main@index":{

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myServiceApp">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	
+	<div ng-controller="serviceController">
+		<input type="text" ng-model="username" placeholder="请输入用户名" />
+		<pre ng-show = "username" ng-bind = "users"></pre>
+		<h1 ng-bind = "ParsedValue"></h1>
+	</div>
+	
+<script src="angular.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

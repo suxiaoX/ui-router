@@ -23,6 +23,30 @@ var items = [{
 	id: '6',
 	name: '米老头',
 	price: 8.8
+},{
+	id: '7',
+	name: '洗发水',
+	price: 21
+},{
+	id: '8',
+	name: '洗面奶',
+	price: 32	
+},{
+	id: '9',
+	name: '护发素',
+	price: 10.2
+},{
+	id: '10',
+	name: '香皂',
+	price: 2.3
+},{
+	id: '11',
+	name: '沐浴露',
+	price: 28.8
+},{
+	id: '12',
+	name: '肥皂',
+	price: 3.2
 }];
 //购物车中的数据;
 var buyList = {};

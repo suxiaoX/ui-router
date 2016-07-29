@@ -1,0 +1,93 @@
+/*清除默認樣式*/
+body,h4,p{
+	margin: 0;
+}
+body{
+	font-size: 12px;
+	color: #666;
+	line-height: 14px;
+}
+ul{
+	padding: 0;
+	margin:0;
+	list-style: none;
+}
+input{
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+	color: blue;
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+/**/
+#shop{
+	position: relative;
+	width: 960px;
+	margin: 50px auto;
+}
+.itemsList{
+	width: 600px;
+	min-height: 400px;
+	padding: 10px;
+	float: left;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	height: 100%;
+}
+.itemsList ul{
+	margin-top: 20px;
+	
+}
+.itemsList li{
+	margin-right: 20px;
+	text-align: center;
+	line-height: 20px;
+}
+/*.itemsList li p{
+	
+}*/
+.shopCar{
+	width: 300px;
+	min-height: 400px;
+	border: 1px solid #000;
+	padding: 10px;
+	box-sizing: border-box;
+	position: relative;
+}
+.shopCar li{
+	/*width: 270px;*/
+	margin-bottom: 10px;
+}
+.shopCar li span{
+	margin-right: 5px;
+	height: 14px;
+}
+.shopCar li span:nth-of-type(1){
+	width: 40px;
+}
+.shopCar li span:nth-of-type(2){
+	width: 30px;
+}
+.shopCar input{
+	width: 100px;
+	height: 12px;
+	margin: 0 5px;
+	text-indent: 10px;
+}
+.shopCar p{
+	position: absolute;
+	right: 10px;
+	bottom: 30px;
+}

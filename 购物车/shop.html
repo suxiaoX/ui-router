@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="shopApp">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="resource/styles/shop.css" />
+<title></title>
+</head>
+<body>
+<section id="shop" class="clearfix" ng-controller="shop">
+	<!--商品列表-->
+	<div class="itemsList fl">
+		<div>
+			<h4>商品列表</h4>
+		</div>
+		<ul class="clearfix">
+			<li class="fl" ng-repeat="value in items" item-id={{value.id}}>
+				<p ng-bind = "value.name"></p>
+				<p ng-bind = "value.price"></p>
+				<p>
+					<a href="javascript:;" ng-click="buyAction($event);" name={{value.name}} price={{value.price}} item-id={{value.id}} >购买</a>
+				</p>
+			</li>
+		</ul>
+	</div>
+	<!--购物车-->
+	<div class="shopCar fr">
+		<ul>
+			 <li class="clearfix" ng-repeat="value in buyList">
+                <span class="fl" ng-bind="value.name"></span>
+                <span class="fl" ng-bind="value.price"></span>
+                <span class="fl" item-id = {{value.id}}>
+                    <a href="javascript:;" class="fl" ng-click="value.num= value.num+1;changeNum($event,value.num);">+</a>
+                    <input type="number" class="fl" min=0 ng-model="value.num" ng-init = "value.num=1" ng-change = "changeNum(value.id,value.num)">
+                    <a href="javascript:;" class="fl" ng-click="value.num= value.num-1;changeNum($event,value.num);" >-</a>
+                </span>
+                <a href="javascript:;" class="fl" ng-click="deleteData($event)" item-id = {{value.id}}>删除</a>                
+            </li>
+		</ul>
+		<p>总价格：{{ total | number:1 | currency:"￥"}}</p> 
+　　　　 <!-- angular的优势体现，number：1也就是number数据，小数点后一位。-->
+	</div>
+</section>
+	
+<script src="dev/farmwork/angular/angular.js"></script>
+<script src="dev/farmwork/angular/angular-animate.min.js"></script>
+<script src="dev/farmwork/angular/angular-ui-router.js"></script>
+<script src="data.js"></script>
+<script src="shop.js"></script>
+</body>
+</html>

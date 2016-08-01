@@ -42,7 +42,7 @@ shopApp.controller("shop",["$scope",function($scope){
 	
 	$scope.changeNum = function($event,num){//计算加减价格--$
 		var id ;
-		if(typeof $event == "string"){//这里是判断是否是点击input进行加减的算法，如果是，级直接等于这个数
+		if(typeof $event == "string"){//这里是判断是否是点击input type = "number" change的时候传参的
 			id = $event;
 		}else{
 			id = $event.target.parentNode.getAttribute('item-id');

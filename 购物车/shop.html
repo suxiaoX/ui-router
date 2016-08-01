@@ -30,13 +30,13 @@
                 <span class="fl" ng-bind="value.price"></span>
                 <span class="fl" item-id = {{value.id}}>
                     <a href="javascript:;" class="fl" ng-click="value.num= value.num+1;changeNum($event,value.num);">+</a>
-                    <input type="number" class="fl" min=0 ng-model="value.num" ng-init = "value.num=1" ng-change = "changeNum(value.id,value.num)">
+                    <input type="number" class="fl" min=0 ng-model="value.num" item-id = {{value.id}} ng-init = "value.num=1" ng-change = "changeNum(value.id,value.num)">
                     <a href="javascript:;" class="fl" ng-click="value.num= value.num-1;changeNum($event,value.num);" >-</a>
                 </span>
                 <a href="javascript:;" class="fl" ng-click="deleteData($event)" item-id = {{value.id}}>删除</a>                
             </li>
 		</ul>
-		<p>总价格：{{ total | number:1 | currency:"￥"}}</p> 
+		<p>总价格：{{ total | number:2 | currency:"￥"}}</p> 
 　　　　 <!-- angular的优势体现，number：1也就是number数据，小数点后一位。-->
 	</div>
 </section>

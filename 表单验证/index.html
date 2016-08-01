@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+	<div class="formBox" ng-controller="singUpForm">
+		<h3>新用户注册</h3>
+		<form name="userForm" ng-submit="submitForm()" novalidate class="form">
+			<div class="ceil">
+				<label class="label">用户名：</label>
+				<!--<pre>{{userForm.username.$valid}}</pre>-->
+				<input type="text"
+					   name="username"
+					   ng-model = "userdata.username"
+					   ng-minlength = 6
+					   ng-maxlength = 24
+					   required />
+				<p class="error" 
+					ng-if="userForm.username.$error.required 
+						   && userForm.username.$touched ">
+					用户名不能为空</p>
+				<p class="error" 
+				   ng-if="(userForm.username.$error.minlength || userForm.username.$error.maxlength) 						  							&& userForm.username.$touched ">用户名应为6-24位的数字、英文、下划线组成</p>
+				<!--<p class="error" 
+				   ng-if=" userForm.username.$error.pattren && 
+				   userForm.username.$touched ">请以英文字母开头</p>-->
+				<p  class="right error"
+					ng-if="userForm.username.$valid && 
+					userForm.username.$touched">✔</p>
+			</div>
+			<div class="ceil">
+				<label class="label">密码：</label>
+				<input type="password"
+					   name="password1"
+					   ng-model = "userdata.password1"
+					   ng-minlength = 6
+					   ng-maxlength = 24
+					   required />
+					   
+				<p  class="error" 
+					ng-if="userForm.password1.$error.required 
+						   && userForm.password1.$touched ">
+						   密码不能为空</p>
+				<p  class="error"
+					ng-if="userForm.password1.$error.minlength ||  userForm.password1.$error.maxlength
+						   && userForm.password1.$touched">
+						   密码为6-24位数字、英文、下划线组成</p>
+				<p  class="right error" 
+					ng-if="userForm.password1.$valid && userForm.password1.$touched">✔</p>
+			</div>
+			<div class="ceil">
+				<label class="label">确认密码：</label>
+				<input type="password"
+					   name="passworde2"
+					   ng-model = "userdata.password2"
+					   compare = "userdata.password1"
+					   required />
+					   
+				<p  class="error"
+					ng-if="userForm.passworde2.$error.compare &&
+					userForm.passworde2.$touched">两次输入的密码不一致，请重新输入</p>
+				<p  class="right error" 
+					ng-if="userForm.passworde2.$valid &&
+					 userForm.passworde2.$touched">✔</p>
+			</div>
+			<div class="ceil">
+				<button>提交注册</button>
+			</div>
+		</form>
+	</div>
+	
+<script src="farmbook/angular.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

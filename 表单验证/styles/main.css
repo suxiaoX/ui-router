@@ -1,0 +1,45 @@
+body,h3,p{
+	margin: 0;
+}
+
+input{
+	padding: 0;
+}
+.formBox{
+	width: 340px;
+	padding: 10px;
+	border: 1px solid #000;
+	background-color: #eee;
+	box-sizing: border-box;
+	margin: 50px auto;
+}
+.formBox h3{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.form label {
+	display: inline-block;
+	text-align: right;
+	width: 90px;
+	font-weight: bold;
+}
+.form p{
+	margin-left: 100px;
+	font-size: 12px;
+	line-height: 24px;
+}
+.form .right{
+	display: inline-block;
+	margin: 0;
+	color: green;
+	position: absolute;
+	top: 0px;
+	left: 280px;
+}
+.ceil{
+	margin-bottom: 10px;
+	position: relative;
+}
+.error{
+	color: red;
+}
